@@ -662,7 +662,7 @@ MonoBehaviour:
   playerCount: 4
   startRace: {fileID: 611283737}
   waitingText: {fileID: 1389245310}
-  mirror: {fileID: 0}
+  mirror: {fileID: 295608920}
 --- !u!4 &19803479
 Transform:
   m_ObjectHideFlags: 0

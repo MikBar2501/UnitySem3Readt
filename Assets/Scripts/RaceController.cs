@@ -119,16 +119,16 @@ public class RaceController : MonoBehaviourPunCallbacks
     void LateUpdate()
     {
         int finishedLap = 0;
-        foreach (CheckPointController controller in carsController)
-        {
-            if (controller.lap == totalLaps + 1) finishedLap++;
-
-            if (finishedLap == carsController.Length && racing)
+            foreach (CheckPointController controller in carsController)
             {
-                endPanel.SetActive(true);
-                racing = false;
+                if (controller.lap == totalLaps + 1) finishedLap++;
+
+                if (finishedLap == carsController.Length && racing)
+                {
+                    endPanel.SetActive(true);
+                    racing = false;
+                }
             }
-        }
     }
 
     void CountDown()
