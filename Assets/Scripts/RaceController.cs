@@ -119,6 +119,8 @@ public class RaceController : MonoBehaviourPunCallbacks
     void LateUpdate()
     {
         int finishedLap = 0;
+        if(racing)
+        {
             foreach (CheckPointController controller in carsController)
             {
                 if (controller.lap == totalLaps + 1) finishedLap++;
@@ -129,6 +131,8 @@ public class RaceController : MonoBehaviourPunCallbacks
                     racing = false;
                 }
             }
+        }
+
     }
 
     void CountDown()
@@ -171,7 +175,7 @@ public class RaceController : MonoBehaviourPunCallbacks
         carsController = new CheckPointController[cars.Length];
         for(int i =0; i < cars.Length; i++)
         {
-            carsController[i] = cars[i].GetComponent<CheckPointController>();
+            carsController[i] = cars[i].GetComponentInChildren<CheckPointController>();
         }
     }
 
